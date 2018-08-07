@@ -26,3 +26,4 @@ begin
   exit
 rescue LoadError => err
   warn "=> Unable to load pry"
+end
