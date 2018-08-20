@@ -14,6 +14,13 @@ Plug 'https://github.com/vim-airline/vim-airline.git'
 set laststatus=2 " Always Display vim-airline
 
 Plug 'https://github.com/kien/ctrlp.vim.git'
+
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
+      \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+      \ }
+
 Plug 'https://github.com/rking/ag.vim.git'
 Plug 'https://github.com/mhinz/vim-signify.git'
 Plug 'https://github.com/ntpeters/vim-better-whitespace.git'
