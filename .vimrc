@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
 
@@ -8,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tpope/vim-rails.git'
 Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin.git'
-
+Plug 'https://github.com/adelarsq/vim-matchit.git'
 
 Plug 'https://github.com/vim-airline/vim-airline.git'
 set laststatus=2 " Always Display vim-airline
@@ -86,6 +87,7 @@ Plug 'https://github.com/morhetz/gruvbox.git'
 call plug#end()
 filetype plugin indent on    " required
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 set background=dark " Setting dark mode
 set t_Co=256
 " syntax on
@@ -128,3 +130,5 @@ filetype indent on
 " To ignore plugin indent changes, instead use:
 "NeoVim true color on
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+highlight Comment gui=italic
+highlight Comment cterm=italic
