@@ -46,6 +46,7 @@ Plug 'https://github.com/janko-m/vim-test.git'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/sheerun/vim-polyglot.git'
 Plug 'alvan/vim-closetag'
+Plug 'mtdl9/vim-log-highlighting'
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
