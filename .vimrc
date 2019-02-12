@@ -25,7 +25,12 @@ let g:ctrlp_custom_ignore = {
 Plug 'https://github.com/rking/ag.vim.git'
 Plug 'https://github.com/mhinz/vim-signify.git'
 Plug 'https://github.com/ntpeters/vim-better-whitespace.git'
-autocmd BufEnter * EnableStripWhitespaceOnSave
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
+Plug 'https://github.com/tpope/vim-commentary.git'
+map <C-C> :Commentary<CR>
+
 
 Plug 'https://github.com/scrooloose/nerdtree.git'
 autocmd StdinReadPre * let s:std_in=1
@@ -49,6 +54,9 @@ Plug 'alvan/vim-closetag'
 Plug 'mtdl9/vim-log-highlighting'
 
 " Autocomplete
+Plug 'maksimr/vim-jsbeautify'
+map <c-f> :call JsBeautify()<cr>
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fishbullet/deoplete-ruby'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
@@ -107,8 +115,8 @@ set t_Co=256
 " Can Copy and Paste from system clipboard
 set clipboard=unnamed
 " Comment with ctl + c and Uncomment with ctl + T
-map <C-C> :s:^:#<CR>
-map <C-T> :s:^#<CR>
+"map <C-C> :s:^:#<CR>
+"map <C-T> :s:^#<CR>
 " Allow navigating in and out of :terminal
 :tnoremap <Esc> <C-\><C-n>
 " ================ Indentation ======================
