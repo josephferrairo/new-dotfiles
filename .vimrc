@@ -52,6 +52,7 @@ Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/sheerun/vim-polyglot.git'
 Plug 'alvan/vim-closetag'
 Plug 'mtdl9/vim-log-highlighting'
+Plug 'https://github.com/ap/vim-css-color.git'
 
 " Autocomplete
 Plug 'maksimr/vim-jsbeautify'
