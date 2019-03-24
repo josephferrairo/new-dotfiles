@@ -17,10 +17,7 @@ set laststatus=2 " Always Display vim-airline
 Plug 'https://github.com/kien/ctrlp.vim.git'
 
 " Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
-      \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-      \ }
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 Plug 'https://github.com/rking/ag.vim.git'
 Plug 'https://github.com/mhinz/vim-signify.git'
@@ -59,7 +56,6 @@ Plug 'maksimr/vim-jsbeautify'
 map <c-f> :call JsBeautify()<cr>
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'fishbullet/deoplete-ruby'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 let g:tern#command = ["tern"]
 let g:deoplete#sources#ternjs#case_insensitive = 0
@@ -93,6 +89,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:sql_type_default = "sqlserver"
 "Current syntax is gruvbox
 Plug 'https://github.com/morhetz/gruvbox.git'
+Plug 'fgsch/vim-varnish'
 " All of your Plugins must be added before the following line
 call plug#end()
 filetype plugin indent on    " required
