@@ -55,7 +55,16 @@ Plug 'https://github.com/ap/vim-css-color.git'
 Plug 'maksimr/vim-jsbeautify'
 map <c-f> :call JsBeautify()<cr>
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
+
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 let g:tern#command = ["tern"]
 let g:deoplete#sources#ternjs#case_insensitive = 0
@@ -80,11 +89,13 @@ let g:jsx_ext_required = 0
 
 
 " JS Linting
-Plug 'https://github.com/w0rp/ale.git'
-let g:airline#extensions#ale#enabled = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+Plug 'neomake/neomake'
+
+" Plug 'https://github.com/w0rp/ale.git'
+" let g:airline#extensions#ale#enabled = 1
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:sql_type_default = "sqlserver"
 "Current syntax is gruvbox
@@ -92,6 +103,9 @@ Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'fgsch/vim-varnish'
 " All of your Plugins must be added before the following line
 call plug#end()
+" enable neomake
+call neomake#configure#automake('rw', 1000)
+
 filetype plugin indent on    " required
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'hard'
