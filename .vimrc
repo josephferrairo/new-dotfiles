@@ -104,7 +104,7 @@ Plug 'fgsch/vim-varnish'
 " All of your Plugins must be added before the following line
 call plug#end()
 " enable neomake
-call neomake#configure#automake('rw', 1000)
+call neomake#configure#automake('nrwi', 500)
 
 filetype plugin indent on    " required
 colorscheme gruvbox
