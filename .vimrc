@@ -90,9 +90,9 @@ let g:jsx_ext_required = 0
 
 " JS Linting
 Plug 'neomake/neomake'
-
+let g:neomake_javascript_enabled_makers = ['eslint']
 " Plug 'https://github.com/w0rp/ale.git'
-" let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#aleenabled = 1
 " let g:ale_echo_msg_error_str = 'E'
 " let g:ale_echo_msg_warning_str = 'W'
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -100,6 +100,7 @@ Plug 'neomake/neomake'
 let g:sql_type_default = "sqlserver"
 "Current syntax is gruvbox
 Plug 'https://github.com/morhetz/gruvbox.git'
+Plug 'https://github.com/sheerun/vim-polyglot.git'
 Plug 'fgsch/vim-varnish'
 " All of your Plugins must be added before the following line
 call plug#end()

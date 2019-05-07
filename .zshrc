@@ -6,7 +6,7 @@ source ~/.aliases
 source ~/.secrets
 ZSH_THEME="robbyrussell"
 
-plugins=(zsh-autosuggestions git rails ruby bundler sudo)
+plugins=(git rails ruby bundler sudo)
 source ~/.oh-my-zsh/oh-my-zsh.sh
 eval "$(rbenv init -)"
 source /Users/jferrair/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
